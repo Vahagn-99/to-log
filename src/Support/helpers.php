@@ -2,12 +2,12 @@
 
 if (!function_exists('alt_log')) {
     /**
-     * AltLog.
+     * ToLog.
      *
-     * @return \SrcLab\AltLog\Contracts\AltLog
+     * @return \SrcLab\AltLog\Contracts\ToLog
      */
     function alt_log()
     {
-        return app(\SrcLab\AltLog\Contracts\AltLog::class);
+        return app(\SrcLab\AltLog\Contracts\ToLog::class);
     }
 }

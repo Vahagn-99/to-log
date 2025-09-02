@@ -168,7 +168,7 @@ function renderAltLogList(log_list, log_groups) {
 
     var list = '';
 
-    list += '<h5><i class="far fa-file-alt"></i> <span>AltLog</span></h5>';
+    list += '<h5><i class="far fa-file-alt"></i> <span>ToLog</span></h5>';
 
 
     var grouped_log_list = _.groupBy(log_list, function(item) {

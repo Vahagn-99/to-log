@@ -2,14 +2,14 @@
 
 namespace SrcLab\AltLog;
 
-use SrcLab\AltLog\Contracts\AltLog as AltLogContract;
+use SrcLab\AltLog\Contracts\ToLog as AltLogContract;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Handler\StreamHandler;
 use Illuminate\Log\ParsesLogConfiguration;
 use InvalidArgumentException;
 
-class AltLog implements AltLogContract
+class ToLog implements AltLogContract
 {
     use ParsesLogConfiguration;
 

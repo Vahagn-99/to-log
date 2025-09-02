@@ -11,8 +11,8 @@ return [
     ],
 
     'view' => [
-        'title' => 'AltLog',
-        'navbar_title' => 'AltLog',
+        'title' => 'ToLog',
+        'navbar_title' => 'ToLog',
         'back_button' => 'Back',
         'logs' => 'Project logs',
         'refresh' => 'Refresh',

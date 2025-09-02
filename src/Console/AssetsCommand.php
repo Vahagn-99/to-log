@@ -11,14 +11,14 @@ class AssetsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'alt-log:assets';
+    protected $signature = 'to-log:assets';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Re-publish the alt-log assets';
+    protected $description = 'Re-publish the to-log assets';
 
     /**
      * Execute the console command.
@@ -28,7 +28,7 @@ class AssetsCommand extends Command
     public function handle()
     {
         $this->call('vendor:publish', [
-            '--tag' => 'alt-log-assets',
+            '--tag' => 'to-log-assets',
             '--force' => true,
         ]);
     }

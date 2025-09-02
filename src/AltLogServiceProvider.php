@@ -22,8 +22,8 @@ class AltLogServiceProvider extends ServiceProvider
         $this->registerCommands();
         $this->registerPublishes();
 
-        $this->app->singleton( \SrcLab\AltLog\Contracts\AltLog::class,AltLog::class);
-        $this->app->alias(\SrcLab\AltLog\Contracts\AltLog::class,'srclab.alt_log');
+        $this->app->singleton( \SrcLab\AltLog\Contracts\ToLog::class,ToLog::class);
+        $this->app->alias(\SrcLab\AltLog\Contracts\ToLog::class,'srclab.alt_log');
     }
 
     /**

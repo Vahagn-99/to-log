@@ -2,7 +2,7 @@
 
 namespace SrcLab\AltLog\Contracts;
 
-interface AltLog
+interface ToLog
 {
     /**
      * Create and get the logger instance.

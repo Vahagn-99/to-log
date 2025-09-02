@@ -11,14 +11,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'alt-log:install';
+    protected $signature = 'to-log:install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install Alt log';
+    protected $description = 'Install To log';
 
     /**
      * Execute the console command.
@@ -29,14 +29,14 @@ class InstallCommand extends Command
     {
         $this->comment('Publishing assets...');
         $this->callSilent('vendor:publish', [
-            '--tag' => 'alt-log-assets',
+            '--tag' => 'to-log-assets',
         ]);
 
         $this->comment('Publishing configuration...');
         $this->callSilent('vendor:publish', [
-            '--tag' => 'alt-log-config',
+            '--tag' => 'to-log-config',
         ]);
 
-        $this->info('Alt log installed successfully.');
+        $this->info('To log installed successfully.');
     }
 }
