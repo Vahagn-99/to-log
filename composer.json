@@ -1,5 +1,5 @@
 {
-    "name": "vahang/to-log",
+    "name": "Vahagn/to-log",
     "description": "Laravel logging package",
     "type": "library",
     "license": "Private",
@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vahang\\ToLog\\ToLogServiceProvider"
+                "Vahagn\\ToLog\\ToLogServiceProvider"
             ],
             "aliases": {
                 "AltLog": "Vahagn\\ToLog\\Support\\Facades\\ToLog"
