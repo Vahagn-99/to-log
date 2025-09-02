@@ -1,19 +1,15 @@
 {
-    "name": "Vahagn/to-log",
+    "name": "vahagn/to-log",
     "description": "Laravel logging package",
     "type": "library",
-    "license": "Private",
+    "license": "proprietary",
     "require": {
         "php": ">=7.4.0",
         "laravel/framework": ">=8.0"
     },
     "autoload": {
-        "psr-4": {
-            "Vahagn\\ToLog\\": "src/"
-        },
-        "files": [
-            "src/Support/helpers.php"
-        ]
+        "psr-4": { "Vahagn\\ToLog\\": "src/" },
+        "files": ["src/Support/helpers.php"]
     },
     "extra": {
         "laravel": {
