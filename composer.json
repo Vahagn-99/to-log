@@ -17,7 +17,7 @@
                 "Vahagn\\ToLog\\ToLogServiceProvider"
             ],
             "aliases": {
-                "AltLog": "Vahagn\\ToLog\\Support\\Facades\\ToLog"
+                "ToLog": "Vahagn\\ToLog\\Support\\Facades\\ToLog"
             }
         }
     }
