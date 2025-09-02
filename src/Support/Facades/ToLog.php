@@ -1,8 +1,8 @@
 <?php
 
-namespace SrcLab\AltLog\Support\Facades;
+namespace Vahagn\ToLog\Support\Facades;
 
-class AltLog extends \Illuminate\Support\Facades\Facade
+class ToLog extends \Illuminate\Support\Facades\Facade
 {
     /**
      * Get the registered name of the component.
@@ -11,6 +11,6 @@ class AltLog extends \Illuminate\Support\Facades\Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'srclab.alt_log';
+        return 'Vahagn.to_log';
     }
 }

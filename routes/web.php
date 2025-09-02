@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SrcLab\AltLog\Http\Controllers\LogController;
+use Vahagn\ToLog\Http\Controllers\LogController;
 
 Route::get('/logs', [LogController::class, 'index'])->name('index');
 

@@ -144,7 +144,7 @@ function renderLogList(log_list, log_groups) {
             list += renderLaravelLogList(grouped_log_list[key]);
         }
 
-        if(key == 'alt') {
+        if(key == 'to') {
             list += renderAltLogList(grouped_log_list[key], log_groups);
         }
     }

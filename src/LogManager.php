@@ -1,9 +1,9 @@
 <?php
 
-namespace SrcLab\AltLog;
+namespace Vahagn\ToLog;
 
 use Illuminate\Filesystem\Filesystem;
-use SrcLab\AltLog\Exceptions\InvalidLogNameException;
+use Vahagn\ToLog\Exceptions\InvalidLogNameException;
 use InvalidArgumentException;
 
 class LogManager
@@ -28,7 +28,7 @@ class LogManager
     public function __construct(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
-        $this->config = config('alt-log');
+        $this->config = config('to-log');
     }
 
     /**
@@ -36,7 +36,7 @@ class LogManager
      *
      * @param string $log
      * @return string
-     * @throws \SrcLab\AltLog\Exceptions\InvalidLogNameException
+     * @throws \Vahagn\ToLog\Exceptions\InvalidLogNameException
      */
     public function getLogPath($log)
     {
@@ -54,7 +54,7 @@ class LogManager
      *
      * @param string $log
      * @return array
-     * @throws \SrcLab\AltLog\Exceptions\InvalidLogNameException
+     * @throws \Vahagn\ToLog\Exceptions\InvalidLogNameException
      */
     public function getLogInfo($log)
     {
@@ -89,7 +89,7 @@ class LogManager
         /**
          * Alt логи.
          */
-        $result_list = array_merge($result_list, $this->formatTypeLogsList($this->getLogsListByPath($this->getLogDirectory('alt')), 'alt'));
+        $result_list = array_merge($result_list, $this->formatTypeLogsList($this->getLogsListByPath($this->getLogDirectory('to')), 'to'));
 
 
         return $result_list;
@@ -114,7 +114,7 @@ class LogManager
         }
 
         $result_list['default'] = [
-            'name' => __('alt-log::general.server.default_log'),
+            'name' => __('to-log::general.server.default_log'),
         ];
 
 
@@ -125,7 +125,7 @@ class LogManager
      * Delete log.
      *
      * @param string $log
-     * @throws \SrcLab\AltLog\Exceptions\InvalidLogNameException
+     * @throws \Vahagn\ToLog\Exceptions\InvalidLogNameException
      */
     public function deleteLog($log)
     {
@@ -236,8 +236,8 @@ class LogManager
 
                 return rtrim($this->config['laravel_logs_path'], '/');
 
-            case 'alt':
-                return rtrim($this->config['alt_logs_path'], '/');
+            case 'to':
+                return rtrim($this->config['to_logs_path'], '/');
 
             default:
                 throw new InvalidArgumentException('Invalid log type.');

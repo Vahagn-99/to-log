@@ -1,15 +1,15 @@
 <?php
 
-namespace SrcLab\AltLog;
+namespace Vahagn\ToLog;
 
-use SrcLab\AltLog\Contracts\ToLog as AltLogContract;
+use Vahagn\ToLog\Contracts\ToLog as ToLogContract;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Handler\StreamHandler;
 use Illuminate\Log\ParsesLogConfiguration;
 use InvalidArgumentException;
 
-class ToLog implements AltLogContract
+class ToLog implements ToLogContract
 {
     use ParsesLogConfiguration;
 
@@ -32,14 +32,14 @@ class ToLog implements AltLogContract
      */
     function __construct()
     {
-        $this->config = config('alt-log');
+        $this->config = config('to-log');
     }
 
     /**
      * Create and get the logger instance.
      *
      * @param string $name
-     * @return \SrcLab\AltLog\Logger
+     * @return \Vahagn\ToLog\Logger
      */
     public function file($name)
     {
@@ -55,7 +55,7 @@ class ToLog implements AltLogContract
      * Create the logger instance.
      *
      * @param string $file_name
-     * @return \SrcLab\AltLog\Logger
+     * @return \Vahagn\ToLog\Logger
      * @throws \Exception
      */
     protected function createLogInstance($file_name)
@@ -162,7 +162,7 @@ class ToLog implements AltLogContract
         $config = $this->config['logging']['custom_log'][$file_name] ?? $this->config['logging']['default'];
 
         if (empty($config['path'])) {
-            $config['path'] = \Str::finish($this->config['alt_logs_path'], '/').$file_name.'.log';
+            $config['path'] = \Str::finish($this->config['to_logs_path'], '/').$file_name.'.log';
         }
 
         return $config;

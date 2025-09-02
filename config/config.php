@@ -9,7 +9,7 @@ return [
     */
     'route' => [
         'domain' => null,
-        'path' => 'alt-log',
+        'path' => 'to-log',
         'middleware' => ['web'],
     ],
 
@@ -64,7 +64,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'laravel_logs_path' => storage_path('logs'),
-    'alt_logs_path' => storage_path('app/alt_logs/'),
+    'to_logs_path' => storage_path('app/to_logs/'),
     'max_file_size' => 1048576 * 50,
 
 ];

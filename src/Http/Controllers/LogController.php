@@ -1,13 +1,13 @@
 <?php
 
-namespace SrcLab\AltLog\Http\Controllers;
+namespace Vahagn\ToLog\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use SrcLab\AltLog\LogManager;
-use SrcLab\AltLog\LogParser;
-use SrcLab\AltLog\Exceptions\LogNotFoundException;
-use SrcLab\AltLog\Exceptions\LargeLogException;
+use Vahagn\ToLog\LogManager;
+use Vahagn\ToLog\LogParser;
+use Vahagn\ToLog\Exceptions\LogNotFoundException;
+use Vahagn\ToLog\Exceptions\LargeLogException;
 use Throwable;
 use Log;
 
@@ -20,9 +20,9 @@ class LogController extends Controller
      */
     public function index()
     {
-        return view('alt-log::index', [
-            'back_url' => config('alt-log.view.back_url', '/'),
-            'log_date_format' => config('alt-log.view.log_date_format'),
+        return view('to-log::index', [
+            'back_url' => config('to-log.view.back_url', '/'),
+            'log_date_format' => config('to-log.view.log_date_format'),
         ]);
     }
 
@@ -48,7 +48,7 @@ class LogController extends Controller
 
         } catch (Throwable $e) {
             Log::error($e);
-            return $this->returnError(__('alt-log::general.server.server_error'));
+            return $this->returnError(__('to-log::general.server.server_error'));
         }
     }
 
@@ -71,12 +71,12 @@ class LogController extends Controller
             ]);
 
         } catch (LargeLogException $e) {
-            return $this->returnError(__('alt-log::general.server.large_log'));
+            return $this->returnError(__('to-log::general.server.large_log'));
         } catch (LogNotFoundException $e) {
-            return $this->returnError(__('alt-log::general.server.log_not_found'));
+            return $this->returnError(__('to-log::general.server.log_not_found'));
         } catch (Throwable $e) {
             Log::error($e);
-            return $this->returnError(__('alt-log::general.server.server_error'));
+            return $this->returnError(__('to-log::general.server.server_error'));
         }
     }
 
@@ -96,15 +96,15 @@ class LogController extends Controller
                 $log_manager->deleteLog($log);
             }
 
-            return $this->returnSuccess(__('alt-log::general.server.logs_deleted'));
+            return $this->returnSuccess(__('to-log::general.server.logs_deleted'));
 
         } catch (LargeLogException $e) {
-            return $this->returnError(__('alt-log::general.server.large_log'));
+            return $this->returnError(__('to-log::general.server.large_log'));
         } catch (LogNotFoundException $e) {
-            return $this->returnError(__('alt-log::general.server.log_not_found'));
+            return $this->returnError(__('to-log::general.server.log_not_found'));
         } catch (Throwable $e) {
             Log::error($e);
-            return $this->returnError(__('alt-log::general.server.server_error'));
+            return $this->returnError(__('to-log::general.server.server_error'));
         }
     }
 

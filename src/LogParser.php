@@ -1,9 +1,9 @@
 <?php
 
-namespace SrcLab\AltLog;
+namespace Vahagn\ToLog;
 
-use SrcLab\AltLog\Exceptions\LogNotFoundException;
-use SrcLab\AltLog\Exceptions\LargeLogException;
+use Vahagn\ToLog\Exceptions\LogNotFoundException;
+use Vahagn\ToLog\Exceptions\LargeLogException;
 use SplFileObject;
 
 class LogParser
@@ -13,7 +13,7 @@ class LogParser
      */
     function __construct()
     {
-        $this->config = config('alt-log');
+        $this->config = config('to-log');
     }
 
     /**
@@ -21,8 +21,8 @@ class LogParser
      *
      * @param string $path
      * @return array
-     * @throws \SrcLab\AltLog\Exceptions\LargeLogException
-     * @throws \SrcLab\AltLog\Exceptions\LogNotFoundException
+     * @throws \Vahagn\ToLog\Exceptions\LargeLogException
+     * @throws \Vahagn\ToLog\Exceptions\LogNotFoundException
      */
     public function parseLog($path)
     {

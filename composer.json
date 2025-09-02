@@ -1,5 +1,5 @@
 {
-    "name": "profilancegroup/alt-log",
+    "name": "vahang/to-log",
     "description": "Laravel logging package",
     "type": "library",
     "license": "Private",
@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SrcLab\\AltLog\\": "src/"
+            "Vahagn\\ToLog\\": "src/"
         },
         "files": [
             "src/Support/helpers.php"
@@ -18,10 +18,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SrcLab\\AltLog\\AltLogServiceProvider"
+                "Vahang\\ToLog\\ToLogServiceProvider"
             ],
             "aliases": {
-                "AltLog": "SrcLab\\AltLog\\Support\\Facades\\AltLog"
+                "AltLog": "Vahagn\\ToLog\\Support\\Facades\\ToLog"
             }
         }
     }

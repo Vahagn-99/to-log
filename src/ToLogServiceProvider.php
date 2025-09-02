@@ -1,11 +1,11 @@
 <?php
 
-namespace SrcLab\AltLog;
+namespace Vahagn\ToLog;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class AltLogServiceProvider extends ServiceProvider
+class ToLogServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -14,16 +14,16 @@ class AltLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (! defined('ALT_LOG_PACKAGE_PATH')) {
-            define('ALT_LOG_PACKAGE_PATH', realpath(__DIR__.'/../'));
+        if (! defined('TO_LOG_SERVICE_PATH')) {
+            define('TO_LOG_SERVICE_PATH', realpath(__DIR__.'/../'));
         }
 
         $this->registerConfigs();
         $this->registerCommands();
         $this->registerPublishes();
 
-        $this->app->singleton( \SrcLab\AltLog\Contracts\ToLog::class,ToLog::class);
-        $this->app->alias(\SrcLab\AltLog\Contracts\ToLog::class,'srclab.alt_log');
+        $this->app->singleton( \Vahagn\ToLog\Contracts\ToLog::class,ToLog::class);
+        $this->app->alias(\Vahagn\ToLog\Contracts\ToLog::class,'Vahagn.to_log');
     }
 
     /**
@@ -45,9 +45,9 @@ class AltLogServiceProvider extends ServiceProvider
      */
     protected function registerRoutes()
     {
-        $domain = config('alt-log.route.domain');
-        $path = config('alt-log.route.path');
-        $middleware = config('alt-log.route.middleware');
+        $domain = config('to-log.route.domain');
+        $path = config('to-log.route.path');
+        $middleware = config('to-log.route.middleware');
 
         if (empty($path) || empty($middleware)) {
             return;
@@ -57,10 +57,10 @@ class AltLogServiceProvider extends ServiceProvider
             'domain' => $domain,
             'prefix' => $path,
             'middleware' => $middleware,
-            'as' => 'alt-log::',
-            'namespace' => 'SrcLab\AltLog\Http\Controllers',
+            'as' => 'to-log::',
+            'namespace' => 'Vahagn\ToLog\Http\Controllers',
         ], function () {
-            $this->loadRoutesFrom(ALT_LOG_PACKAGE_PATH.'/routes/web.php');
+            $this->loadRoutesFrom(TO_LOG_SERVICE_PATH.'/routes/web.php');
         });
     }
 
@@ -71,7 +71,7 @@ class AltLogServiceProvider extends ServiceProvider
      */
     protected function registerResources()
     {
-        $this->loadViewsFrom(ALT_LOG_PACKAGE_PATH.'/resources/views', 'alt-log');
+        $this->loadViewsFrom(TO_LOG_SERVICE_PATH.'/resources/views', 'to-log');
     }
 
     /**
@@ -81,7 +81,7 @@ class AltLogServiceProvider extends ServiceProvider
      */
     protected function registerTranslations()
     {
-        $this->loadTranslationsFrom(ALT_LOG_PACKAGE_PATH.'/resources/lang', 'alt-log');
+        $this->loadTranslationsFrom(TO_LOG_SERVICE_PATH.'/resources/lang', 'to-log');
     }
 
     /**
@@ -91,7 +91,7 @@ class AltLogServiceProvider extends ServiceProvider
      */
     protected function registerConfigs()
     {
-        $this->mergeConfigFrom(ALT_LOG_PACKAGE_PATH.'/config/config.php', 'alt-log');
+        $this->mergeConfigFrom(TO_LOG_SERVICE_PATH.'/config/config.php', 'to-log');
     }
 
     /**
@@ -104,12 +104,12 @@ class AltLogServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-                ALT_LOG_PACKAGE_PATH.'/config/config.php' => config_path('alt-log.php'),
-            ], 'alt-log-config');
+                TO_LOG_SERVICE_PATH.'/config/config.php' => config_path('to-log.php'),
+            ], 'to-log-config');
 
             $this->publishes([
-                ALT_LOG_PACKAGE_PATH.'/public' => public_path('vendor/alt-log'),
-            ], 'alt-log-assets');
+                TO_LOG_SERVICE_PATH.'/public' => public_path('vendor/to-log'),
+            ], 'to-log-assets');
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SrcLab\AltLog\Exceptions;
+namespace Vahagn\ToLog\Exceptions;
 
 use Exception;
 

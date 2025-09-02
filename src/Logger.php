@@ -1,6 +1,6 @@
 <?php
 
-namespace SrcLab\AltLog;
+namespace Vahagn\ToLog;
 
 use Monolog\Logger as MonologLogger;
 use Throwable;

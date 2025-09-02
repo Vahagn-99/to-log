@@ -1,13 +1,13 @@
 <?php
 
-if (!function_exists('alt_log')) {
+if (!function_exists('to_log')) {
     /**
      * ToLog.
      *
-     * @return \SrcLab\AltLog\Contracts\ToLog
+     * @return \Vahagn\ToLog\Contracts\ToLog
      */
-    function alt_log()
+    function to_log()
     {
-        return app(\SrcLab\AltLog\Contracts\ToLog::class);
+        return app(\Vahagn\ToLog\Contracts\ToLog::class);
     }
 }

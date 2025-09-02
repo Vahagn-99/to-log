@@ -17,8 +17,8 @@ mix
             extractComments: false,
         }
     })
-    .setResourceRoot('/vendor/alt-log/')
+    .setResourceRoot('/vendor/to-log/')
     .setPublicPath('public')
     .sass('resources/assets/sass/app.sass', 'css/app.css')
     .js('resources/assets/js/app.js', 'js/app.js')
-    .copy('public', '../../../public/vendor/alt-log');
+    .copy('public', '../../../public/vendor/to-log');

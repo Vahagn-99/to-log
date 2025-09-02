@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ __('alt-log::general.view.title') }}</title>
+    <title>{{ __('to-log::general.view.title') }}</title>
 
-    <link href="{{ asset('/vendor/alt-log/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/vendor/to-log/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('alt-log::index') }}">{{ __('alt-log::general.view.navbar_title') }}</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('to-log::index') }}">{{ __('to-log::general.view.navbar_title') }}</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="{{ $back_url }}">{{ __('alt-log::general.view.back_button') }}</a>
+            <a class="nav-link" href="{{ $back_url }}">{{ __('to-log::general.view.back_button') }}</a>
         </li>
     </ul>
 </nav>
@@ -25,7 +25,7 @@
             <div class="sidebar-sticky">
 
                 <div class="log-list-title">
-                    <h5>{{ __('alt-log::general.view.logs') }}</h5>
+                    <h5>{{ __('to-log::general.view.logs') }}</h5>
                     <button type="button" class="btn btn-outline-dark btn-sm refresh-logs"><i class="fas fa-sync-alt"></i></button>
                 </div>
 
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="log-list-delete">
-                    <button type="button" class="btn btn-outline-danger btn-sm  delete-logs"><i class="fas fa-trash"></i> {{ __('alt-log::general.view.delete') }}</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm  delete-logs"><i class="fas fa-trash"></i> {{ __('to-log::general.view.delete') }}</button>
                 </div>
 
             </div>
@@ -54,16 +54,16 @@
 <script type="text/javascript">
 
     var token = '{{ csrf_token() }}';
-    var translations = JSON.parse('{!! json_encode(__('alt-log::general.view')) !!}');
+    var translations = JSON.parse('{!! json_encode(__('to-log::general.view')) !!}');
     var log_date_format = '{{ $log_date_format }}';
-    var route_delete_log = '{{ route('alt-log::log.delete') }}';
-    var route_get_logs_list = '{{ route('alt-log::log.list') }}';
-    var route_get_log_data = '{{ route('alt-log::log.get') }}';
+    var route_delete_log = '{{ route('to-log::log.delete') }}';
+    var route_get_logs_list = '{{ route('to-log::log.list') }}';
+    var route_get_log_data = '{{ route('to-log::log.get') }}';
 
 </script>
 
 <!-- App -->
-<script src="{{ asset('/vendor/alt-log/js/app.js') }}"></script>
+<script src="{{ asset('/vendor/to-log/js/app.js') }}"></script>
 
 </body>
 </html>

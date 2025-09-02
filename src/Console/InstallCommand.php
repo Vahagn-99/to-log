@@ -1,6 +1,6 @@
 <?php
 
-namespace SrcLab\AltLog\Console;
+namespace Vahagn\ToLog\Console;
 
 use Illuminate\Console\Command;
 
